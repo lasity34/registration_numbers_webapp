@@ -5,7 +5,7 @@ export default function registration_route(registrationService) {
    async function add(req, res) {
        await registrationService.insert_registration_number(req.body.name) 
 
-        res.redirect("/reg_numbers")
+        res.redirect("/")
     }
 
     async function show(req, res) {

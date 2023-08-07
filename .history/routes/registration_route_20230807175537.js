@@ -3,17 +3,13 @@
 export default function registration_route(registrationService) {
 
    async function add(req, res) {
-       await registrationService.insert_registration_number(req.body.name) 
+       await registrationService.insert_registration_number(registrationService) 
 
-        res.redirect("/reg_numbers")
+        res.redirect("/", )
     }
 
-    async function show(req, res) {
-
-        const reg_num = registrationService.get_all_registration_numbers()
-        res.render("index", {
-            reg_num: reg_num
-        })
+    function show(req, res) {
+        res.render("index")
     }
 
     return {
@@ -22,6 +18,9 @@ export default function registration_route(registrationService) {
     }
 
 }
+
+
+
 
 // async function add(req, res) {
 //     await greetingService.setLanguage(req.body.language);

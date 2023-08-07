@@ -11,7 +11,7 @@ import registration_route from "./routes/registration_route.js";
 
 
 // services
-import registration_service from "./services/registration_service.js";
+import registration_service from "./services/regsitration_service.js";
 
 
 const app = express()
@@ -28,7 +28,7 @@ const db = pgp(connection)
 
 createTables(db)
   .then(() => {
-
+    
     const registrationService = registration_service(db);
 
 

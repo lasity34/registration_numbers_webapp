@@ -11,7 +11,7 @@ import registration_route from "./routes/registration_route.js";
 
 
 // services
-import registration_service from "./services/registration_service.js";
+import registration_service from "./services/regsitration_service.js";
 
 
 const app = express()
@@ -28,11 +28,7 @@ const db = pgp(connection)
 
 createTables(db)
   .then(() => {
-
     const registrationService = registration_service(db);
-
-
-
     const registrationRoute = registration_route(registrationService);
 
     app.engine("handlebars", engine());
@@ -48,7 +44,7 @@ createTables(db)
 
 
     app.get('/reg_numbers', registrationRoute.show);
-    app.post("/reg_numbers", registrationRoute.add)
+    app.post("/reg_numbers")
 
 
 

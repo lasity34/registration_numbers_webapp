@@ -14,27 +14,4 @@
     <input id="reg_num" type="text" name="name" name="name" placeholder="Type registration here" />
     <button type="submit">Add Registration</button>
   </form>
-
-
-  <div class="reg_container">
-    <h2>List of registration numbers</h2>
-    {{#each reg_num}}
-        <span>
-          {{this.registration_number}}
-        </span>
-    {{/each}}
-  </div>
 </div>
-
-
- {{!-- {{#each users}}
-        <tr>
-          <td>{{this.name}}</td>
-          <td>
-            <form action="/counter/{{this.name}}">
-              <button type="submit" class="view">View</button>
-            </form>
-          </td>
-        </tr>
-
-      {{/each}} --}}
