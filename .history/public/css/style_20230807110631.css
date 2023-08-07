@@ -1,0 +1,34 @@
+
+body {
+    background-color: rgb(227, 224, 220);
+}
+
+.container {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.instruction_container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.example_container {
+    margin-top: 1em;
+}
+
+.example_container span {
+    margin-left: 1em;
+    font-size: 1.1rem;
+}
+
+.container form {
+    text-align: center;
+    margin: 3em auto;
+}

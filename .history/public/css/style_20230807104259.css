@@ -1,0 +1,18 @@
+
+.container {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.example_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container form {
+    margin-top: 3em;
+}

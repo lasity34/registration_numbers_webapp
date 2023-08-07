@@ -1,0 +1,78 @@
+body {
+    background-image: url('./registration.jpg');
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: top; /* Center the image */
+    font-family: Arial, sans-serif;
+    color: #f0f0f0;
+}
+
+
+.container {
+    margin: 0 auto;
+    width: 60%;
+    padding: 1rem;
+    background: linear-gradient(120deg, #282525, #222121);
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+.instruction_container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.instruction_container h3 {
+    font-size: 1.5rem;
+    color: #c0c0c0;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.example_container {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.example_container span {
+    margin: 0.5em;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #aaa;
+}
+
+.container form {
+    text-align: center;
+    margin: 3em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+    color: #c0c0c0;
+    font-weight: bold;
+}
+
+input {
+    padding: 0.5em;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #888;
+    background-color: #444;
+    color: #f0f0f0;
+    border-radius: 5px;
+}
