@@ -3,15 +3,11 @@
 export default function registration_service(db) {
 
 
-    let message = "";
-
-
     async function get_town_id_by_prefix(prefix) {
         try {
             const result = await db.one('SELECT id FROM registration_project.towns WHERE name = $1', [prefix])
             return result.id
         } catch (error) {
-           
             console.error("Failed to get town ID by prefix", error);
           }
     }
@@ -24,14 +20,12 @@ export default function registration_service(db) {
         const town_id = await get_town_id_by_prefix(prefix)
 
         if (!/^C[ACL][0-9]+$/.test(registration_number)) {
-            message = "Invalid registration number"
             console.error("Invalid registration number:", registration_number);
             return; 
         }
 
         const existingRegistration = await db.oneOrNone('SELECT * FROM registration_project.registration WHERE registration_number = $1', [registration_number]);
         if (existingRegistration) {
-            message = "Registration number already exists";
             console.error("Registration number already exists:", registration_number);
             return; // or handle differently
         }
@@ -47,6 +41,9 @@ export default function registration_service(db) {
 
        
      
+ 
+    
+
     async function get_all_registration_numbers() {
         try {
             const result = await db.any('SELECT * FROM registration_project.registration')
@@ -57,14 +54,9 @@ export default function registration_service(db) {
         }
     }
 
-    function getMessage() {
-        return message
-    }
-
     return {
         insert_registration_number,
-        get_all_registration_numbers,
-        getMessage
+        get_all_registration_numbers
     }
 }
 

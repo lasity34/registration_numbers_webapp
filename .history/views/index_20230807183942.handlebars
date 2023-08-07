@@ -23,14 +23,11 @@
 
   <div class="reg_container">
     <h2>List of registration numbers</h2>
-    <div class="reg_item">
-      {{#each reg_num}}
-        <div class="number-plate">
-          {{this.registration_number}}
-        </div>
-      {{/each}}
-    </div>
-
+    {{#each reg_num}}
+      <div class="number-plate">
+        {{this.registration_number}}
+      </div>
+    {{/each}}
   </div>
 </div>
 

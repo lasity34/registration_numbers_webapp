@@ -31,7 +31,6 @@ export default function registration_service(db) {
 
         const existingRegistration = await db.oneOrNone('SELECT * FROM registration_project.registration WHERE registration_number = $1', [registration_number]);
         if (existingRegistration) {
-            message = "Registration number already exists";
             console.error("Registration number already exists:", registration_number);
             return; // or handle differently
         }

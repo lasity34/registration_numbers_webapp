@@ -96,10 +96,8 @@ button:hover {
 
 .reg_container {
     text-align: center;
-}
+   
 
-.reg_container h2 {
-    text-decoration: underline;
 }
 
 .reg_container .reg_item {
@@ -110,7 +108,7 @@ button:hover {
 
 .number-plate {
     display: inline-block;
-    background-color: rgb(255, 255, 53); /* Change to silver if you prefer */
+    background-color: rgb(233, 233, 105); /* Change to silver if you prefer */
     border: 2px solid black;
     border-radius: 8px;
     padding: 10px 20px;

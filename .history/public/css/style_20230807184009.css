@@ -7,9 +7,9 @@ body {
 }
 
 .container {
-    max-width: 800px; /* Controlled width for better responsiveness */
-    margin: 0 auto;
-    padding: 0 1rem;
+    max-width: 600px; /* Controlled width for better responsiveness */
+    margin: 1rem auto;
+    padding: 1rem;
 }
 
 .container h1 {
@@ -94,28 +94,15 @@ button:hover {
 
 /* number plate */
 
-.reg_container {
-    text-align: center;
-}
-
-.reg_container h2 {
-    text-decoration: underline;
-}
-
-.reg_container .reg_item {
-    display: flex;
-    justify-content: center;
-    
-}
 
 .number-plate {
     display: inline-block;
-    background-color: rgb(255, 255, 53); /* Change to silver if you prefer */
+    background-color: rgb(245, 245, 237); /* Change to silver if you prefer */
     border: 2px solid black;
     border-radius: 8px;
     padding: 10px 20px;
     font-family: 'Arial', sans-serif;
-    font-size: 1.2rem;
+    font-size: 16px;
     margin: 10px;
   }
 
