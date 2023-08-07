@@ -65,13 +65,12 @@ input {
     max-width: 300px;
     border: 1px solid #ccc;
     background-color: #fff;
-    color: #1f1d1d;
+    color: #333;
     border-radius: 5px;
 }
 
 input::placeholder {
     font-size: 1.2rem; /* Adjust the size as desired */
-    color: #000000;
 }
 
 button {

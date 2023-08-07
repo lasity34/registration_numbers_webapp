@@ -71,7 +71,7 @@ input {
 
 input::placeholder {
     font-size: 1.2rem; /* Adjust the size as desired */
-    color: #000000;
+    color: #f00000;
 }
 
 button {
