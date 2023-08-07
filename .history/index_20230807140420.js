@@ -18,7 +18,7 @@ const app = express()
 
 const connection = {
     connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }
+
   };
 
 const pgp = pgPromise()

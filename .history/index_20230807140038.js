@@ -2,10 +2,7 @@ import express from "express";
 import { engine } from "express-handlebars";
 import pgPromise from "pg-promise";
 import createTables from "./tableSql.js";
-import dotenv from 'dotenv';
 
-
-dotenv.config();
 // routes
 import registration_route from "./routes/registration_route.js";
 
@@ -18,7 +15,7 @@ const app = express()
 
 const connection = {
     connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }
+
   };
 
 const pgp = pgPromise()
