@@ -78,7 +78,7 @@ describe("Registration Number", function () {
 
         await registration.insert_registration_number("CA3124");
       
-        assert.equal('Registration number already exists' , registration.getMessage());
+        assert.equal('Invalid registration number' , registration.getMessage());
       });
 
 

@@ -72,13 +72,11 @@ describe("Registration Number", function () {
      
         const initialReg = await registration.get_all_registration_numbers()
   
-        await registration.insert_registration_number("CA3124");
+        await registration.insert_registration_number("CX3124");
   
         const newReg = await registration.get_all_registration_numbers()
-
-        await registration.insert_registration_number("CA3124");
       
-        assert.equal('Registration number already exists' , registration.getMessage());
+        assert.equal('Invalid registration number' , registration.getMessage());
       });
 
 

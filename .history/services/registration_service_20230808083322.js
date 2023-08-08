@@ -12,7 +12,7 @@ export default function registration_service(db) {
             if (result) {
                 return result.id;
             } else {
-                message = `Town not valid`;
+                console.error(`No town found for prefix: ${prefix}`);
                 return null;
             }
         } catch (error) {
@@ -20,7 +20,17 @@ export default function registration_service(db) {
             return null;
         }
     }
-   
+      async function get_town_id_by_prefix(prefix) {
+        try {
+            const result = await db.oneOrNone('SELECT id FROM registration_project.towns WHERE name = $1', [prefix])
+            return result.id
+        } catch (error) {
+           
+            console.error("Failed to get town ID by prefix", error);
+            return [];
+          }
+    }
+
    async function insert_registration_number(registration_number) {
 
         const upperCaseRegistrationNumber = registration_number.toUpperCase();

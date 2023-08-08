@@ -44,46 +44,17 @@ describe("Registration Number", function () {
       assert.equal(initialCount  + 1 , newCount);
     });
 
-    it("This should test if the incorrect registration number is chosen and it should not add", async function () {
+    it("This should test if the registration number CL is chosen", async function () {
      
      
         const initialCount = (await registration.get_all_registration_numbers()).length;
   
-        await registration.insert_registration_number("CX3124");
+        await registration.insert_registration_number("CA3124");
   
         const newCount = (await registration.get_all_registration_numbers()).length;
       
-        assert.equal(initialCount  , newCount);
+        assert.equal(initialCount  + 1 , newCount);
       });
-
-      it("This should test if the incorrect registration number is chosen and it should display a message", async function () {
-     
-     
-        const initialCount = (await registration.get_all_registration_numbers()).length;
-  
-        await registration.insert_registration_number("CX3124");
-  
-        const newCount = (await registration.get_all_registration_numbers()).length;
-      
-        assert.equal('Invalid registration number' , registration.getMessage());
-      });
-      it("This should test if to see if number plate has already been used", async function () {
-     
-     
-        const initialReg = await registration.get_all_registration_numbers()
-  
-        await registration.insert_registration_number("CA3124");
-  
-        const newReg = await registration.get_all_registration_numbers()
-
-        await registration.insert_registration_number("CA3124");
-      
-        assert.equal('Registration number already exists' , registration.getMessage());
-      });
-
-
-
-
     
   });
   

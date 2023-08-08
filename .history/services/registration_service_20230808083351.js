@@ -12,7 +12,7 @@ export default function registration_service(db) {
             if (result) {
                 return result.id;
             } else {
-                message = `Town not valid`;
+                console.error(`No town found for prefix: ${prefix}`);
                 return null;
             }
         } catch (error) {
