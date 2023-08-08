@@ -24,7 +24,7 @@ export default function registration_service(db) {
         const prefix = upperCaseRegistrationNumber.substring(0, 2)
         const town_id = await get_town_id_by_prefix(prefix)
 
-        if (!/^C[ACL][0-9]+$/.test(upperCaseRegistrationNumber)) {
+        if (!/^C(J|A|L)[0-9]+$/.test(upperCaseRegistrationNumber)) {
             message = "Invalid registration number"
             console.error("Invalid registration number:", upperCaseRegistrationNumber);
             return; 

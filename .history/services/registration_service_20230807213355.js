@@ -13,7 +13,6 @@ export default function registration_service(db) {
         } catch (error) {
            
             console.error("Failed to get town ID by prefix", error);
-            return [];
           }
     }
 
@@ -51,10 +50,10 @@ export default function registration_service(db) {
     async function get_all_registration_numbers() {
         try {
             const result = await db.any('SELECT * FROM registration_project.registration');
+            console.log('Result:', result); // Add this line
             return result;
         } catch (error) {
-            console.error("Failed to get registration numbers", error);
-            return []; // Return an empty array in case of an error
+            console.error("Failed to get registration numbers", error); // Make sure this line is here
         }
     }
     

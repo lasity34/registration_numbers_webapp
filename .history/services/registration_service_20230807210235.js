@@ -13,7 +13,6 @@ export default function registration_service(db) {
         } catch (error) {
            
             console.error("Failed to get town ID by prefix", error);
-            return [];
           }
     }
 
@@ -26,19 +25,19 @@ export default function registration_service(db) {
 
         if (!/^C[ACL][0-9]+$/.test(upperCaseRegistrationNumber)) {
             message = "Invalid registration number"
-            console.error("Invalid registration number:", upperCaseRegistrationNumber);
+            console.error("Invalid registration number:", registration_number);
             return; 
         }
 
-        const existingRegistration = await db.oneOrNone('SELECT * FROM registration_project.registration WHERE registration_number = $1', [upperCaseRegistrationNumber]);
+        const existingRegistration = await db.oneOrNone('SELECT * FROM registration_project.registration WHERE registration_number = $1', [registration_number]);
         if (existingRegistration) {
             message = "Registration number already exists";
-            console.error("Registration number already exists:", upperCaseRegistrationNumber);
+            console.error("Registration number already exists:", registration_number);
             return; // or handle differently
         }
 
         try {
-            const result = await db.none('INSERT INTO registration_project.registration (registration_number, town_id) VALUES ($1, $2)', [upperCaseRegistrationNumber, town_id])
+            const result = await db.none('INSERT INTO registration_project.registration (registration_number, town_id) VALUES ($1, $2)', [registration_number, town_id])
             return result
         } catch (error) {
             console.error("Failed to insert registration number", error);
@@ -50,14 +49,13 @@ export default function registration_service(db) {
      
     async function get_all_registration_numbers() {
         try {
-            const result = await db.any('SELECT * FROM registration_project.registration');
-            return result;
+            const result = await db.any('SELECT * FROM registration_project.registration')
+            return result
         } catch (error) {
-            console.error("Failed to get registration numbers", error);
-            return []; // Return an empty array in case of an error
+            console.error("Failed to insert registration number", error);
+
         }
     }
-    
 
     function getMessage() {
         return message

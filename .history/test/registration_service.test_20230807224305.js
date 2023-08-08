@@ -21,16 +21,6 @@ describe("Registration Number", function () {
     this.timeout(5000)
   
     const registration = registration_service(db)
-
-
-    beforeEach(async function() {
-        // Truncate the registration table
-        await db.none('TRUNCATE TABLE registration_project.registration RESTART IDENTITY CASCADE');
-        
-        // If there are other tables you need to reset, you can add more TRUNCATE statements here
-      });
-    
-
  
     it("This should test if the registration number has been added", async function () {
      

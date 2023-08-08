@@ -13,7 +13,6 @@ export default function registration_service(db) {
         } catch (error) {
            
             console.error("Failed to get town ID by prefix", error);
-            return [];
           }
     }
 
