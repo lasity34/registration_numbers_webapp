@@ -51,6 +51,17 @@ export default function registration_service(db) {
     }
 
 
+    // async function get_registration_numbers_by_town(town) {
+    //     try {
+    //         const result = await db.any('SELECT * FROM registration_project.registration WHERE registration_number LIKE $1', [town + '%']);
+    //         return result;
+    //     } catch (error) {
+    //         console.error("Failed to get registration numbers by town", error);
+    //         return []; // Return an empty array in case of an error
+    //     }
+    // }
+    
+
     async function get_registration_numbers_by_town(town) {
         try {
             const result = await db.any('SELECT * FROM registration_project.registration WHERE registration_number LIKE $1', [town + '%']);

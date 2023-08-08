@@ -11,7 +11,7 @@ export default function registration_route(registrationService) {
 
     async function show(req, res) {
         
-        const town = req.body.town;
+        const town = reg.body.town;
         
         let reg_num;
         if (town && town !== 'all') {
@@ -19,6 +19,7 @@ export default function registration_route(registrationService) {
         } else {
             reg_num = await registrationService.get_all_registration_numbers()
         }
+
         res.render("index", {
             reg_num: reg_num
         })
