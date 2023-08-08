@@ -91,11 +91,6 @@ button:hover {
     background-color: #555; /* Slightly lighter background color on hover */
 }
 
-.add {
-    background-color: rgb(42, 184, 42);
-    border: 3px solid #1f1d1d;
-}
-
 
 /* number plate */
 
@@ -125,10 +120,6 @@ button:hover {
   }
 
 /* filter tiwns */
-
-.radio_container {
-    margin: 2em;
-}
 
 .filter-section {
     margin: 2em auto;
