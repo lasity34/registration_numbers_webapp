@@ -190,27 +190,12 @@ button:hover {
 
 /* single_reg_container */
 
-.cont {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 .single_reg_container {
     text-align: center;
-    margin: auto;
-    height: auto;
+    margin: 0 auto;
     background-color: #fff;
     display: flex;
-    width: 30%;
-    padding: 0.4em;
+    width: 40%;
     justify-content: center;
-    border: 3px solid #333;
-    border-radius: 10px;
-}
-
-.single_reg_container h1 {
-    font-size: 5rem;
 }

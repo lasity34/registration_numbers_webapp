@@ -205,12 +205,12 @@ button:hover {
     background-color: #fff;
     display: flex;
     width: 30%;
-    padding: 0.4em;
+    
     justify-content: center;
     border: 3px solid #333;
     border-radius: 10px;
 }
 
-.single_reg_container h1 {
+.single_reg_container h3 {
     font-size: 5rem;
 }

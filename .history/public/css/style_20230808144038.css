@@ -205,12 +205,8 @@ button:hover {
     background-color: #fff;
     display: flex;
     width: 30%;
-    padding: 0.4em;
+    font-size: 3rem;
     justify-content: center;
     border: 3px solid #333;
     border-radius: 10px;
-}
-
-.single_reg_container h1 {
-    font-size: 5rem;
 }
