@@ -59,7 +59,6 @@ createTables(db)
 
     app.get("/reg_numbers", registrationRoute.show);
     app.post("/reg_numbers", registrationRoute.add);
-    app.get("/reg_number/:registration", registrationRoute.get);
 
     const PORT = process.env.PORT || 3012;
 

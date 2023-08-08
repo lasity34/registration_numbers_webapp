@@ -1,0 +1,79 @@
+<div class="container">
+  <h1>🪪 Registration Numbers 🪪</h1>
+  <div class="instruction_container">
+    <h3>Please type in your registration number for either: </h3>
+    <div class="example_container">
+
+      <span>Cape Town : (CA3234)</span>
+      <span>Stellenbosch : (CL3234)</span>
+      <span>Paarl : (CJ3234)</span>
+    </div>
+  </div>
+<div>
+ <form action="/reg_numbers" method="post">
+    <input
+      id="reg_num"
+      type="text"
+      name="name"
+      name="name"
+      placeholder="Type registration here"
+    />
+    <button type="submit" name="action" value="add" class="add">Add Registration</button>
+
+    <div class="filter-section">
+      <label for="town" class="town_label">Choose a town:</label>
+
+
+    <div class="radio_container">
+    <input type="radio" id="all" name="town" value="all" {{#ifEquals town 'all'}}checked{{/ifEquals}}>
+    <label for="all">All</label>
+    <input type="radio" id="CA" name="town" value="CA" {{#ifEquals town 'CA'}}checked{{/ifEquals}}>
+    <label for="CA">Cape Town</label>
+    <input type="radio" id="CL" name="town" value="CL" {{#ifEquals town 'CL'}}checked{{/ifEquals}}>
+    <label for="CL">Stellenbosch</label>
+    <input type="radio" id="CJ" name="town" value="CJ" {{#ifEquals town 'CJ'}}checked{{/ifEquals}}>
+    <label for="CJ">Paarl</label>
+</div>
+
+
+      <button type="submit" name="action" value="filter">Filter Registrations</button>
+    </div>
+{{#each messages}}
+<div class="flash-message">{{this}}</div>
+{{/each}}
+  </form>
+</div>
+ 
+<div>
+<div class="reg_container">
+    <h2>List of registration numbers</h2>
+    <div class="reg_item">
+      {{#if reg_num.length}}
+      {{#each reg_num}}
+        <div class="number-plate">
+          <a href="/reg_number/{{this.registration_number}}">
+            {{this.registration_number}}
+          </a>
+        </div>
+      {{/each}}
+      {{else}}
+      <p>There are no registration numbers for {{townName town}}.</p>
+      {{/if}}
+    </div>
+</div>
+</div>
+
+
+
+
+
+</div>
+    <script>
+      setTimeout(function() {
+        const flashMessage = document.querySelector('.flash-message');
+        if (flashMessage) {
+          flashMessage.style.display = 'none'; 
+        }
+      }, 4000)
+    </script>
+

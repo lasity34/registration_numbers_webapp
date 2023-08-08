@@ -127,11 +127,11 @@ button:hover {
 /* filter tiwns */
 
 .radio_container {
-    margin: 1em;
+    margin: 2em;
 }
 
 .filter-section {
-    margin: 1em auto;
+    margin: 2em auto;
     width: 100%;
 }
 
@@ -140,5 +140,3 @@ button:hover {
     width: 4%;
     
 }
-
-/* main 2 containers */

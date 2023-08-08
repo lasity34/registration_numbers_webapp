@@ -39,14 +39,7 @@ export default function registration_route(registrationService) {
 
  async function get(req, res) {
 
-    const registrationNumber = req.params.registration;
-    const registration = await registrationService.get_by_registration_number(registrationNumber);
-
-    res.render("registration",{
-        registration_number: registration ? registration.registration_number : null
-    }
-    
-    )
+    const registrationNumber = req.params.registration
 
   }
 

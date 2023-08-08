@@ -16,20 +16,10 @@ import registration_service from "./services/registration_service.js";
 const app = express();
 dotenv.config();
 
-// flash and session
-app.use(session({
-  secret: 'your-secret-key', 
-  resave: false,
-  saveUninitialized: true,
-}));
-app.use(flash());
-
-// pg promise
 const connection = {
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },
 };
-
 
 const pgp = pgPromise();
 
@@ -59,7 +49,6 @@ createTables(db)
 
     app.get("/reg_numbers", registrationRoute.show);
     app.post("/reg_numbers", registrationRoute.add);
-    app.get("/reg_number/:registration", registrationRoute.get);
 
     const PORT = process.env.PORT || 3012;
 

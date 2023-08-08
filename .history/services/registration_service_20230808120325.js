@@ -79,7 +79,7 @@ export default function registration_service(db) {
         }
     }
 
-    async function get_by_registration_number(registration_number) {
+    async function get_by_registration_number() {
         try {
             const result = await db.oneOrNone('SELECT * FROM registration_project.registration WHERE registration_number = $1', [registration_number]);
             return result;

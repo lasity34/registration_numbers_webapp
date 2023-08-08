@@ -79,14 +79,8 @@ export default function registration_service(db) {
         }
     }
 
-    async function get_by_registration_number(registration_number) {
-        try {
-            const result = await db.oneOrNone('SELECT * FROM registration_project.registration WHERE registration_number = $1', [registration_number]);
-            return result;
-        } catch (error) {
-            console.error("Failed to get registration by number", error);
-            return null;
-        }
+    async function get_by_registration_number() {
+        
     }
     
 
@@ -98,8 +92,7 @@ export default function registration_service(db) {
         insert_registration_number,
         get_all_registration_numbers,
         getMessage,
-        get_registration_numbers_by_town,
-        get_by_registration_number
+        get_registration_numbers_by_town
     }
 }
 
