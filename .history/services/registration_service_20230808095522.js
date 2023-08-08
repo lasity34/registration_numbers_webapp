@@ -23,12 +23,6 @@ export default function registration_service(db) {
    
    async function insert_registration_number(registration_number) {
 
-    if (!registration_number || registration_number.trim() === '') {
-        message = "Registration number cannot be blank";
-        console.error("Blank registration number");
-        return;
-    }
-
         const upperCaseRegistrationNumber = registration_number.toUpperCase();
 
         const prefix = upperCaseRegistrationNumber.substring(0, 2)

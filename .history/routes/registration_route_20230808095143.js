@@ -28,8 +28,7 @@ export default function registration_route(registrationService) {
             reg_num = await registrationService.get_all_registration_numbers()
         }
         res.render("index", {
-            reg_num: reg_num,
-            town: town
+            reg_num: reg_num
         })
     }
 

@@ -24,17 +24,16 @@
       <label for="town" class="town_label">Choose a town:</label>
 
 
-    <div class="radio_container">
-    <input type="radio" id="all" name="town" value="all" {{#ifEquals town 'all'}}checked{{/ifEquals}}>
+      <div class="radio_container">
+    <input type="radio" id="all" name="town" value="all" {{town == 'all' ? 'checked' : ''}}>
     <label for="all">All</label>
-    <input type="radio" id="CA" name="town" value="CA" {{#ifEquals town 'CA'}}checked{{/ifEquals}}>
+    <input type="radio" id="CA" name="town" value="CA" {{town == 'CA' ? 'checked' : ''}}>
     <label for="CA">Cape Town</label>
-    <input type="radio" id="CL" name="town" value="CL" {{#ifEquals town 'CL'}}checked{{/ifEquals}}>
+    <input type="radio" id="CL" name="town" value="CL" {{town == 'CL' ? 'checked' : ''}}>
     <label for="CL">Stellenbosch</label>
-    <input type="radio" id="CJ" name="town" value="CJ" {{#ifEquals town 'CJ'}}checked{{/ifEquals}}>
+    <input type="radio" id="CJ" name="town" value="CJ" {{town == 'CJ' ? 'checked' : ''}}>
     <label for="CJ">Paarl</label>
 </div>
-
 
       <button type="submit" name="action" value="filter">Filter Registrations</button>
     </div>
@@ -47,17 +46,13 @@
   <div class="reg_container">
     <h2>List of registration numbers</h2>
     <div class="reg_item">
-      {{#if reg_num.length}}
       {{#each reg_num}}
         <div class="number-plate">
           {{this.registration_number}}
         </div>
       {{/each}}
-      {{else}}
-      <p>There are no registration numbers for {{townName town}}.</p>
-      {{/if}}
     </div>
-  </div>
 
+  </div>
 </div>
 

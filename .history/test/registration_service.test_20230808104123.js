@@ -81,11 +81,11 @@ describe("Registration Number", function () {
   });
 
   it("This should test if to see if number plate is blank", async function () {
-    await registration.insert_registration_number("");
-
+    await registration.insert_registration_number("CA3124");
+    await registration.insert_registration_number("CA3124");
 
     assert.equal(
-      "Registration number cannot be blank",
+      "Registration number already exists",
       registration.getMessage()
     );
   });

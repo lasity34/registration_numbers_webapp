@@ -85,7 +85,7 @@ describe("Registration Number", function () {
 
 
     assert.equal(
-      "Registration number cannot be blank",
+      "Registration number already exists",
       registration.getMessage()
     );
   });

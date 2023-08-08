@@ -47,17 +47,13 @@
   <div class="reg_container">
     <h2>List of registration numbers</h2>
     <div class="reg_item">
-      {{#if reg_num.length}}
       {{#each reg_num}}
         <div class="number-plate">
           {{this.registration_number}}
         </div>
       {{/each}}
-      {{else}}
-      <p>There are no registration numbers for {{townName town}}.</p>
-      {{/if}}
     </div>
-  </div>
 
+  </div>
 </div>
 
