@@ -78,7 +78,7 @@ describe("Registration Number", function () {
   it("This should test if the incorrect registration number is chosen and it should display a message", async function () {
     await registration.insert_registration_number("CX3124");
 
-    assert.equal("Invalid registration number", registration.getMessage().text);
+    assert.equal("Invalid registration number", registration.getMessage());
   });
 
 
@@ -88,7 +88,7 @@ describe("Registration Number", function () {
 
     assert.equal(
       "Registration number already exists",
-      registration.getMessage().text
+      registration.getMessage()
     );
   });
 
@@ -98,7 +98,7 @@ describe("Registration Number", function () {
 
     assert.equal(
       "Registration number cannot be blank",
-      registration.getMessage().text
+      registration.getMessage()
     );
   });
 

@@ -10,7 +10,7 @@ export default function registration_service(db) {
       if (result) {
         return result.id;
       } else {
-        message = { text: "Town not valid", valid: false };
+        message = `Town not valid`;
         return null;
       }
     } catch (error) {
@@ -31,24 +31,21 @@ export default function registration_service(db) {
     const prefix = upperCaseRegistrationNumber.substring(0, 2);
     const town_id = await get_town_id_by_prefix(prefix);
 
-    const cleanedRegistrationNumber = upperCaseRegistrationNumber.replace(/\s+/g, ''); // Remove white space
-
-    if (!/^C[AJL][-0-9]{1,8}$/.test(cleanedRegistrationNumber) || cleanedRegistrationNumber.length > 9) {
-      message = { text: "Invalid registration number", valid: false };
+    if (!/^C[AJL][0-9]+$/.test(upperCaseRegistrationNumber)) {
+      message = "Invalid registration number";
       console.error(
         "Invalid registration number:",
-        cleanedRegistrationNumber
+        upperCaseRegistrationNumber
       );
       return;
     }
-    
 
     const existingRegistration = await db.oneOrNone(
       "SELECT * FROM registration_project.registration WHERE registration_number = $1",
       [upperCaseRegistrationNumber]
     );
     if (existingRegistration) {
-      message = {text: "Registration number already exists", valid: false};
+      message = "Registration number already exists";
       console.error(
         "Registration number already exists:",
         upperCaseRegistrationNumber
@@ -57,14 +54,13 @@ export default function registration_service(db) {
     }
 
     try {
-      await db.none(
+      const result = await db.none(
         "INSERT INTO registration_project.registration (registration_number, town_id) VALUES ($1, $2)",
         [upperCaseRegistrationNumber, town_id]
       );
-      message = { text: "Registration number inserted successfully", valid: true }; // Valid case
+      return result;
     } catch (error) {
-      message = { text: "Failed to insert registration number", valid: false }; // Error case
-      console.error(error);
+      console.error("Failed to insert registration number", error);
     }
   }
 

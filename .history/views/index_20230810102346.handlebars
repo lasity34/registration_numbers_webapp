@@ -41,11 +41,11 @@
 
             <button type="submit" name="action" value="filter">Filter Registrations</button>
           </div>
-            {{#each messages}}
-          <div class="flash-message {{#if this.valid}}success{{else}}error{{/if}}">
-            {{this.text}}
-          </div>
-        {{/each}}
+    {{#each messages}}
+  <div class="flash-message {{#if this.valid}}success{{else}}error{{/if}}">
+    {{this.text}}
+  </div>
+{{/each}}
         </form>
       </div>
  

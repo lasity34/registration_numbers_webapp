@@ -31,17 +31,14 @@ export default function registration_service(db) {
     const prefix = upperCaseRegistrationNumber.substring(0, 2);
     const town_id = await get_town_id_by_prefix(prefix);
 
-    const cleanedRegistrationNumber = upperCaseRegistrationNumber.replace(/\s+/g, ''); // Remove white space
-
-    if (!/^C[AJL][-0-9]{1,8}$/.test(cleanedRegistrationNumber) || cleanedRegistrationNumber.length > 9) {
-      message = { text: "Invalid registration number", valid: false };
+    if (!/^C[AJL][0-9]+$/.test(upperCaseRegistrationNumber)) {
+      message = "Invalid registration number";
       console.error(
         "Invalid registration number:",
-        cleanedRegistrationNumber
+        upperCaseRegistrationNumber
       );
       return;
     }
-    
 
     const existingRegistration = await db.oneOrNone(
       "SELECT * FROM registration_project.registration WHERE registration_number = $1",

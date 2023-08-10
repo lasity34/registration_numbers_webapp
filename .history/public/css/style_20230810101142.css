@@ -240,10 +240,10 @@ button:hover {
     transition: all 0.3s ease;
   }
   
-  .flash-message.success {
+  .flash-message.valid {
     background-color: #4CAF50; /* Green for success */
   }
   
-  .flash-message.error {
+  .flash-message.invalid {
     background-color: #f44336; /* Red for error */
   }
