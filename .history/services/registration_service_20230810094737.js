@@ -108,6 +108,7 @@ export default function registration_service(db) {
 
   async function reset() {
     message = ""
+    language = undefined
     try {
       await db.none('DELETE FROM registration_project.registration')
     }
@@ -123,6 +124,5 @@ export default function registration_service(db) {
     getMessage,
     get_registration_numbers_by_town,
     get_by_registration_number,
-    reset
   };
 }

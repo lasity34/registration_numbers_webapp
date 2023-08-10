@@ -50,8 +50,7 @@ export default function registration_route(registrationService) {
   }
 
   async function reset(req, res) {
-    registrationService.reset()
-    res.redirect("/reg_numbers")
+    
   }
 
   return {

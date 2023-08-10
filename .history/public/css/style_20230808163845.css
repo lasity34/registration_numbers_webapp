@@ -6,7 +6,6 @@ body {
     color: #333;
     margin: 0;
     padding: 1em;
-    font-family: 'Simonetta', cursive;
 }
 
 
@@ -214,13 +213,4 @@ button:hover {
 
 .single_reg_container h1 {
     font-size: 5rem;
-}
-
-.reset_button {
-    background-color: rgb(246, 27, 27);
-}
-
-
-.reset_button:hover {
-    background-color: rgb(162, 26, 26);
 }

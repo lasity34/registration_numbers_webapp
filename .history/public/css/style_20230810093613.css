@@ -217,10 +217,5 @@ button:hover {
 }
 
 .reset_button {
-    background-color: rgb(246, 27, 27);
-}
-
-
-.reset_button:hover {
-    background-color: rgb(162, 26, 26);
+    background-color: red;
 }
