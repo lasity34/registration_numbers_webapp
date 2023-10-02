@@ -57,9 +57,10 @@ createTables(db)
     // parse application/json
     app.use(bodyParser.json());
 
-    app.get("/reg_numbers", registrationRoute.show);
+    app.get("/", registrationRoute.show);
     app.post("/reg_numbers", registrationRoute.add);
-    app.get("/reg_number/:registration", registrationRoute.get);
+    app.get("/reg_numbers/:registration", registrationRoute.get);
+    app.post("/reset", registrationRoute.reset)
 
     const PORT = process.env.PORT || 3012;
 
